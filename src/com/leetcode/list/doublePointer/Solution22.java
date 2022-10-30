@@ -1,4 +1,4 @@
-package com.leetcode.list;
+package com.leetcode.list.doublePointer;
 
 //剑指Offer22.单链表的倒数第k个节点
 public class Solution22 {

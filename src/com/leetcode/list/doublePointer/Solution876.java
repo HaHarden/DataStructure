@@ -1,4 +1,4 @@
-package com.leetcode.list;
+package com.leetcode.list.doublePointer;
 
 //876.链表的中间节点
 public class Solution876 {
