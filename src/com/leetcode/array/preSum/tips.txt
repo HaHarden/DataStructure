@@ -1,0 +1,2 @@
+url:https://labuladong.github.io/algo/2/20/25/
+说明：小而美的算法技巧：差分数组
