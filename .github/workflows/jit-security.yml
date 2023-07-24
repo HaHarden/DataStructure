@@ -12,7 +12,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: enrichment
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -21,14 +21,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   remediation-pr:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'remediation-pr' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-remediation-pr'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: remediation-pr
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -38,14 +38,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   secret-detection:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'secret-detection' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-secret-detection'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: gitleaks
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -55,14 +55,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   static-code-analysis-csharp:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-csharp' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -71,14 +71,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   static-code-analysis-go:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-go' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: gosec
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -87,14 +87,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   static-code-analysis-java:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-java' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -103,14 +103,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   static-code-analysis-js:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-js' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -119,14 +119,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   static-code-analysis-kotlin:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-kotlin' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -135,14 +135,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   static-code-analysis-python-semgrep:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-python-semgrep' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -151,14 +151,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   static-code-analysis-rust:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-rust' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -167,14 +167,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   static-code-analysis-scala:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-scala' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -183,14 +183,14 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
+        
   static-code-analysis-swift:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-swift' && fromJSON(github.event.inputs.client_payload).payload.workflow_slug == 'workflow-sast'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.5
+      uses: jitsecurity-controls/jit-github-action@v2.6
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -199,3 +199,4 @@ jobs:
         dispatch_type: workflow
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
+        
