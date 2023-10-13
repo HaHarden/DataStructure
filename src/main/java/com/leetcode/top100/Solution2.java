@@ -1,7 +1,5 @@
 package com.leetcode.top100;
 
-import com.leetcode.list.recursion.Solution25;
-
 /**
  * 2.两数相加
  * 两个指针   虚拟节点
